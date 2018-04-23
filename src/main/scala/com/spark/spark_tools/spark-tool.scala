@@ -8,7 +8,8 @@ object SparkTool {
     val conf = new SparkConf().setMaster("local").setAppName("Spark Tool")
     val sc = new SparkContext(conf)
 
-    val input = sc.textFile("/Users/diegobenavides/Documentos/DataSets/numbers.txt")
+    val input = sc.parallelize(List(1,2,3,4,5,6,7,8,9,10))
+    //val input = sc.textFile("/Users/diegobenavides/Documentos/DataSets/numbers.txt")
 
     println(input.collect().mkString(","))
 
